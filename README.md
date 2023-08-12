@@ -1,2 +1,3 @@
-# docker-rustdev
+# kimyvgy/rustdev
+
 Dev container for Rust, VSCode

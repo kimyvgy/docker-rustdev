@@ -1,0 +1,17 @@
+version: "3.6"
+
+volumes:
+  cargo_home:
+
+services:
+  rustdev:
+    image: kimyvgy/rustdev:latest
+    working_dir: /app
+    volumes:
+      - ../:/app
+    ports:
+      - ${PORT:-8080}:${PORT:-8080}
+    environment:
+      UID: ${UID:-1000}
+      GID: ${GID:-1000}
+    tty: true

@@ -1,0 +1,21 @@
+{
+  "name": "Rust",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "rustdev",
+  "workspaceFolder": "/app",
+  "remoteUser": "rust",
+  "extensions": [
+    "rust-lang.rust-analyzer",
+    "tamasfe.even-better-toml",
+    "serayuzgur.crates",
+    "vadimcn.vscode-lldb",
+    "usernamehw.errorlens",
+    "mikestead.dotenv",
+    "Gruntfuggly.todo-tree",
+    "redhat.vscode-yaml",
+    "bajdzis.vscode-database",
+    "yzhang.markdown-all-in-one",
+    "ms-azuretools.vscode-docker",
+    "TabNine.tabnine-vscode",
+  ]
+}
