@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "kimyvgy/rustdev: https://github.com/kimyvgy/docker-rustdev"
+
 echo "Creating user 'rust'..."
 echo "- UID: ${UID}"
 echo "- GID: ${GID}"
