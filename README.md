@@ -1,5 +1,8 @@
 # kimyvgy/rustdev
 
+[![Debian](https://github.com/kimyvgy/docker-rustdev/actions/workflows/debian.yml/badge.svg?branch=main)](https://github.com/kimyvgy/docker-rustdev/actions/workflows/debian.yml)
+[![Docker Hub Description](https://github.com/kimyvgy/docker-rustdev/actions/workflows/docker-hub-description.yml/badge.svg?branch=main)](https://github.com/kimyvgy/docker-rustdev/actions/workflows/docker-hub-description.yml)
+
 Dev container for Rust development.
 
 - `devcontainer` + `vscode` extensions for Rust
