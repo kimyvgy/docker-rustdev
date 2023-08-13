@@ -2,11 +2,10 @@
 
 echo "kimyvgy/rustdev: https://github.com/kimyvgy/docker-rustdev"
 
-echo "Creating user 'rust'..."
-echo "- UID: ${UID}"
-echo "- GID: ${GID}"
-
+echo "Creating group 'rust' (GID=${GID})"
 groupadd -g ${GID} rust
+
+echo "Creating user 'rust' (UID=${UID}, GID=${GID})"
 useradd -ms /bin/bash -u ${UID} -g ${GID} rust
 
 $@

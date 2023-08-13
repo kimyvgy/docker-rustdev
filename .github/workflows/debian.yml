@@ -29,6 +29,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: debian
+          context: "{{defaultContext}}:debian"
           push: true
           tags: kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}}
