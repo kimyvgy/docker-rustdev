@@ -1,7 +1,6 @@
-ARG version="1.71"
-ARG distro="bullseye"
+ARG tag="latest"
 
-FROM rust:${version}-${distro}
+FROM rust:${tag}
 
 RUN apt update && apt install -y curl git pkg-config libssl-dev
 RUN rustup component add clippy rustfmt
