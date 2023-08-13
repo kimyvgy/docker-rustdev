@@ -3,9 +3,11 @@ name: "Debian"
 on:
   pull_request:
     paths:
+      - .github/workflows/debian.yml
       - debian/**
   push:
     paths:
+      - .github/workflows/debian.yml
       - debian/**
 
 jobs:
@@ -14,8 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["1.71"]
-        distro: ["bullseye"]
+        version: ["1", "1.71"]
+        distro:
+          [
+            "buster",
+            "slim-buster",
+            "bullseye",
+            "slim-bullseye",
+            "bookworm",
+            "slim-bookworm",
+          ]
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -32,3 +42,4 @@ jobs:
           context: "{{defaultContext}}:debian"
           push: true
           tags: kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}}
+          cache-from: type=registry,ref=kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}}
