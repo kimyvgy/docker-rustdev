@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "kimyvgy/rustdev: https://github.com/kimyvgy/docker-rustdev"
+echo "https://github.com/kimyvgy/docker-rustdev"
 
-echo "Creating group 'rust' (GID=${GID})"
-groupadd -g ${GID} rust
+if [ "${UID}" != "" ] && [ "${GID}" != "" ]; then
+  echo "Creating group 'rust' (GID=${GID})"
+  groupadd -g ${GID} rust
 
-echo "Creating user 'rust' (UID=${UID}, GID=${GID})"
-useradd -ms /bin/bash -u ${UID} -g ${GID} rust
+  echo "Creating user 'rust' (UID=${UID}, GID=${GID})"
+  useradd -ms /bin/bash -u ${UID} -g ${GID} rust
+fi
 
 $@

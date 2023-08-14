@@ -8,7 +8,5 @@ RUN cargo install cargo-watch
 
 COPY entrypoint.sh /bin/entrypoint.sh
 
-ENV UID=1000 GID=1000
-
 ENTRYPOINT [ "entrypoint.sh" ]
 CMD ["/bin/bash"]
