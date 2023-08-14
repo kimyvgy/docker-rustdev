@@ -5,13 +5,12 @@ volumes:
 
 services:
   rustdev:
-    image: kimyvgy/rustdev:latest
+    image: kimyvgy/rustdev:1-bullseye
     working_dir: /app
     volumes:
+      - cargo_home:/usr/local/cargo
       - ../:/app
-    ports:
-      - ${PORT:-8080}:${PORT:-8080}
     environment:
-      UID: ${UID:-1000}
-      GID: ${GID:-1000}
+      UID: ${UID}
+      GID: ${GID}
     tty: true
