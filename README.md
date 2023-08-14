@@ -5,33 +5,28 @@
 
 Dev container for Rust development.
 
-- `devcontainer` + `vscode` extensions for Rust
-- `cargo watch`: Live reloading in Rust
-- `rust` user will automatically be created when starting with custom UID, GID
+- [ ] `devcontainer` + `vscode` extensions for Rust
+- [x] `cargo watch`: Live reloading in Rust
+- [x] `rust` - a custom user will be created at runtime if the container provides environment variables: UID and GID.
 
 ## docker-compose.yml
 
-```bash
+```yaml
 version: "3.6"
 
 services:
   rustdev:
-    image: kimyvgy/rustdev:1.71-bullseye
+    image: kimyvgy/rustdev:1-bullseye
     working_dir: /app
     volumes:
-      - ../:/app
-    ports:
-      - ${PORT:-8080}:${PORT:-8080}
-    environment:
-      UID: ${UID:-1000}
-      GID: ${GID:-1000}
+      - ./:/app
     tty: true
 ```
 
 ```bash
-# Run container with custom user `rust` (UID, GID):
+# Start rustdev container:
 docker compose up -d
 
 # Develop rust app in watch mode:
-docker compose exec -u rust rustdev cargo watch -x run
+docker compose exec rustdev cargo watch -x run
 ```
