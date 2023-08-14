@@ -6,8 +6,8 @@
 Dev container for Rust development.
 
 - [ ] `devcontainer` + `vscode` extensions for Rust
-- [x] `cargo watch`: Live reloading in Rust
-- [x] `rust` - a custom user will be created at runtime if the container provides environment variables: UID and GID.
+- [x] `cargo watch`: Live reloading
+- [x] `rust` user will be created if the container provides env variables: UID, GID. It will be helpful when using `devcontainer`.
 
 ## docker-compose.yml
 
