@@ -37,13 +37,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Pull cache from registry
-        run: docker pull kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}} || true
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: "{{defaultContext}}:debian"
-          push: true
-          tags: kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}}
-          cache-from: type=registry,ref=kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}}
           build-args: tag=${{matrix.version}}-${{matrix.distro}}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: kimyvgy/rustdev:${{matrix.version}}-${{matrix.distro}}
+          push: ${{ github.event_name != 'pull_request' }}
