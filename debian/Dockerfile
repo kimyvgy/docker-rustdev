@@ -8,6 +8,7 @@ RUN cargo install cargo-watch sccache
 
 RUN mkdir /.cargo \
   && printf "[build]\nrustc-wrapper = \"/usr/local/cargo/bin/sccache\"" > /.cargo/config.toml 
+ENV RUSTC_WRAPPER=/usr/local/cargo/bin/sccache
 
 COPY entrypoint.sh /bin/entrypoint.sh
 
