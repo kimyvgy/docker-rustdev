@@ -7,7 +7,7 @@ RUN rustup component add clippy rustfmt
 RUN cargo install cargo-watch sccache
 
 RUN mkdir /.cargo \
-  && printf "[build]\nrustc-wrapper = \"/var/cache/sccache\"" > config.toml 
+  && printf "[build]\nrustc-wrapper = \"/usr/local/cargo/bin/sccache\"" > /.cargo/config.toml 
 
 COPY entrypoint.sh /bin/entrypoint.sh
 
