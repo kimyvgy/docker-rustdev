@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["1", "1.78"]
+        version: ["1", "1.79"]
         distro:
           - buster
           - slim-buster
